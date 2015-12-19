@@ -6,16 +6,15 @@ pinvprob
 
 Python codes for the linear inverse problem including the generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion
 
-Originally, I developed Fortran 90 codes for two papers, 
+Originally I developed Fortran 90 codes of the inverse problem for two papers, 
 [Kawahara & Fujii (2011)](http://arxiv.org/abs/1106.0136) and [Fujii & Kawahara (2012)](http://arxiv.org/abs/1204.3504). I converted them to Python codes for the internal seminar of our university.
-
 
 The algorithm of the L-curve criterion is based on the brilliant book:
 
 * Hansen, P. C. 2010, Discrete Inverse Problems: Insight and Algorithms (the Society for Industrial and Applied Mathema
 tics).
 
-I made "random_light.py" for a demonstration of solving the inverse problem. This demonstration retrieves a small png image from a collection of summation of random rectangle parts of the image. If you use Japanese, see invprov.pdf, otherwise see this figure. You will understand this problem. 
+I made "random_light.py" as a sample code. This sample code retrieves a small png image from a collection of summation of random rectangle parts of the image. If you use Japanese, see invprov.pdf, otherwise see the figure below. You will understand the problem of the sample. 
 
 <img src="./figure/figure1.png" Titie="explanation" Width=500px>
 
