@@ -1,4 +1,11 @@
-# pinvprob
+pinvprob
+=========
+
+
+[![Licence](http://img.shields.io/badge/license-GPLv2-blue.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
+[![arXiv](http://img.shields.io/badge/arXiv-1106.0136-blue.svg?style=flat)](http://arxiv.org/abs/1106.0136)
+[![arXiv](http://img.shields.io/badge/arXiv-1204.3504-blue.svg?style=flat)](http://arxiv.org/abs/1204.3504)
+
 Python codes for the linear inverse problem including the generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion
 
 **Version 0.1, Hajime Kawahara**
