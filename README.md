@@ -18,7 +18,7 @@ tics).
 
 I made "random_light.py" for a demonstration of solving the inverse problem. This demonstration retrieves a small png image from a collection of summation of random rectangle parts of the image. If you use Japanese, see invprov.pdf, otherwise see this figure. You will understand this problem. 
 
-<img src="./figure/figure1.png" Titie="explanation">
+<img src="./figure/figure1.png" Titie="explanation" Width=500px>
 
 Note that these codes are inefficient when the image size is large because the codes directly use the singular value decomposition. The sample image che.png was taken from Wikipedia and was compressed to a small image.
 
