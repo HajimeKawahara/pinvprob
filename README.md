@@ -8,9 +8,11 @@ Python codes for the linear inverse problem including the generalized inverse ma
 
 Originally, I developed these codes for two papers (Fortran 90), 
 Kawahara & Fujii (2011) [![arXiv](http://img.shields.io/badge/arXiv-1106.0136-red.svg?style=flat)](http://arxiv.org/abs/1106.0136)
-Fujii & Kawahara (2012) [![arXiv](http://img.shields.io/badge/arXiv-1204.3504-green.svg?style=flat)](http://arxiv.org/abs/1204.3504). I imported them to Python for the internal seminar of our university.
+Fujii & Kawahara (2012) [![arXiv](http://img.shields.io/badge/arXiv-1204.3504-green.svg?style=flat)](http://arxiv.org/abs/1204.3504). I converted them to Python codes for the internal seminar of our university.
 
-For the L-curve criterion, see the brilliant book, Hansen, P. C. 2010, Discrete Inverse Problems: Insight and Algorithms (the Society for Industrial and Applied Mathema
+For the L-curve criterion, see the brilliant book:
+
+* Hansen, P. C. 2010, Discrete Inverse Problems: Insight and Algorithms (the Society for Industrial and Applied Mathema
 tics).
 
 I made "random_light.py" for a demonstration of solving the inverse problem. This demonstration retrieves a small png image from a collection of summation of random rectangle parts of the image. If you use Japanese, see invprov.pdf, otherwise see Figure 1 in invprov.pdf, you will understand this problem. 
