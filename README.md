@@ -7,8 +7,8 @@ Python codes for the linear inverse problem including the generalized inverse ma
 **Version 0.1, Hajime Kawahara**
 
 Originally, I developed these codes for two papers (Fortran 90), 
-Kawahara & Fujii (2011) [![arXiv](http://img.shields.io/badge/arXiv-1106.0136-blue.svg?style=flat)](http://arxiv.org/abs/1106.0136)
-Fujii & Kawahara (2012) [![arXiv](http://img.shields.io/badge/arXiv-1204.3504-blue.svg?style=flat)](http://arxiv.org/abs/1204.3504). I imported them to Python for the internal seminar of our university.
+Kawahara & Fujii (2011) [![arXiv](http://img.shields.io/badge/arXiv-1106.0136-red.svg?style=flat)](http://arxiv.org/abs/1106.0136)
+Fujii & Kawahara (2012) [![arXiv](http://img.shields.io/badge/arXiv-1204.3504-green.svg?style=flat)](http://arxiv.org/abs/1204.3504). I imported them to Python for the internal seminar of our university.
 
 For the L-curve criterion, see the brilliant book, Hansen, P. C. 2010, Discrete Inverse Problems: Insight and Algorithms (the Society for Industrial and Applied Mathema
 tics).
