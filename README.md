@@ -6,8 +6,6 @@ pinvprob
 
 Python codes for the linear inverse problem including the generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion
 
-**Version 0.1, Hajime Kawahara**
-
 Originally, I developed Fortran 90 codes for two papers, 
 [Kawahara & Fujii (2011)](http://arxiv.org/abs/1106.0136) and [Fujii & Kawahara (2012)](http://arxiv.org/abs/1204.3504). I converted them to Python codes for the internal seminar of our university.
 
