@@ -15,6 +15,14 @@ I made "random_light.py" for a demonstration of solving the inverse problem. Thi
 
 Note that these codes are inefficient to deal with a large image because the codes directly uses the singular value decomposition. The sample image che.png was taken from Wikipedia.
 
+Requirements
+------------------
+
+* python 2.7
+* scipy
+* pylab
+
+
 Tutorial
 -------------------------
 
@@ -42,8 +50,15 @@ Tutorial
  ./random_light.py -f che.png -n 2500 -l 0.0 -p 0.7 -s 1.0 -lim 1.0
 ~~~~
 
-* Use the L-curve Criterion to search an appropriate regularization parameter. 
+* Use the L-curve criterion (Hansen 2010) to look for an appropriate regularization parameter. 
 
 ~~~~
  ./random_light.py -f che.png -n 2500 -L 0.01 100.0 -p 0.7 -s 1.0
 ~~~~
+
+License
+------------
+
+*GPL
+
+See "License". 
