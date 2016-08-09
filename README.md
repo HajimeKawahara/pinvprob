@@ -14,7 +14,7 @@ The algorithm of the L-curve criterion is based on the brilliant book:
 * Hansen, P. C. 2010, Discrete Inverse Problems: Insight and Algorithms (the Society for Industrial and Applied Mathema
 tics).
 
-I made "random_light.py" as a sample code. This sample code retrieves a small png image from a collection of summation of random rectangle parts of the image. If you use Japanese, see invprov.pdf, otherwise see the figure below. You will understand the problem of the sample. 
+I made "random_light.py" as a sample code. This sample code retrieves a small png image from a collection of summation of random rectangle parts of the image. If you use Japanese, see invprov.pdf, otherwise, see the figure below. You will understand the problem of the sample. 
 
 <img src="./figure/figure1.png" Titie="explanation" Width=500px>
 
@@ -26,7 +26,7 @@ Requirements
 * python 2.7
 * scipy
 * pylab
-
+* scikit-learn (only for random_light_fast.py)
 
 Tutorial
 -------------------------
@@ -68,6 +68,14 @@ Tutorial
 ~~~~
 
 <img src="./figure/figure4.png" Titie="explanation">
+
+* Fast version for Tikhonov regularization using scikit-learn (linear_model.Ridge)
+
+This example uses the Ridge Reggression in scikit-learn linear model. It's ~ ten times faster than np.linalg.svd+tikhonov.py. 
+
+~~~~
+ ./random_light_fast.py -f che.png
+~~~~
 
 
 License
