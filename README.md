@@ -69,9 +69,9 @@ Tutorial
 
 <img src="./figure/figure4.png" Titie="explanation">
 
-* Fast version for Tikhonov regularization using scikit-learn (linear_model.Ridge)
+* Fast version of the Tikhonov regularization using scikit-learn (linear_model.Ridge)
 
-This example uses the Ridge Reggression in scikit-learn linear model. It's ~ ten times faster than np.linalg.svd+tikhonov.py. 
+This example uses the Ridge Regression in scikit-learn linear_model. It's about ten times faster than np.linalg.svd+tikhonov.py. 
 
 ~~~~
  ./random_light_fast.py -f che.png
