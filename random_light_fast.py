@@ -72,7 +72,7 @@ if __name__ == "__main__":
         imgest=mest.reshape(Mx,My)
         elapsed_time = time.time() - start
         print "solved by np.linalg.svd: time=",elapsed_time
-
+        method="Tikhonov Regularization"
     elif solver == "sklearn":
         start = time.time()
         if lamb > 0.0:
@@ -90,6 +90,26 @@ if __name__ == "__main__":
         imgest=mest.reshape(Mx,My)
         elapsed_time = time.time() - start
         print "solved by scikit_learn.Ridge: time=",elapsed_time
+        method="Tikhonov Regularization"
+    elif solver == "lasso":
+        start = time.time()
+        if lamb > 0.0:
+            clf = lm.Lasso(alpha = lamb)
+            clf.fit(g,d)  
+        else:
+            print "Cross Validation between ",lamblist
+            clf = lm.LassoCV(alphas = lamblist)
+            print lamblist
+            clf.fit(g,d)  
+            lamb=clf.alpha_ 
+            print "Result: lambda=",lamb
+        mest=clf.coef_
+        dpre=np.dot(g,mest)+clf.intercept_ 
+        imgest=mest.reshape(Mx,My)
+        elapsed_time = time.time() - start
+        print "solved by scikit_learn.Lasso: time=",elapsed_time
+        method="LASSO"
+
     else:
         sys.exit("invalid solver option. specify sklearn or fullsvd. EXIT.")
     cap="# of beams = "+str(N)+", Mean beam diameter = "+str(width)+" pixels, $\lambda$ = "+str(lamb)
@@ -102,7 +122,7 @@ if __name__ == "__main__":
     ax=fig.add_subplot(132)
     ax.imshow(imgext,cmap="gray")
     pylab.title("data (averaged)")
-    ax.annotate("Tikhonov Regularization", xy=(0.5, 1.15), xycoords='axes fraction',horizontalalignment="center", fontsize=16)
+    ax.annotate(method, xy=(0.5, 1.15), xycoords='axes fraction',horizontalalignment="center", fontsize=16)
     ax.annotate(cap, xy=(0.5, -0.2), xycoords='axes fraction',horizontalalignment="center", fontsize=12,color="gray")
     ax=fig.add_subplot(133)
     ax.imshow(imgest,cmap="gray")

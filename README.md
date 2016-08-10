@@ -83,6 +83,11 @@ If you want to perform the cross validation (CV), provide the list of lambda. In
 ./random_light_fast.py -f che.png -l 1.e-9 1.e-8 1.e-7 1.e-6 1.e-5 -s 1.0
 ~~~~
 
+You can also try LASSO with or w/o CV... but... anyway try.
+
+~~~~
+./random_light_fast.py -f che.png -l 0.001 -solver lasso
+~~~~
 
 License
 ------------
