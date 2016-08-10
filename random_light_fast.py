@@ -15,18 +15,22 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Inverse Problem test program by Hajime Kawahara using sklearn.Ridge')
     parser.add_argument('-f', nargs=1, required=True, help='png file')
     parser.add_argument('-n', nargs=1, default=[1000], help='number of light beams', type=int)
-    parser.add_argument('-l', nargs=1, default=[0.001], help='lambda', type=float)
+    parser.add_argument('-l', nargs='+', default=[0.001], help='lambda. if you specify multiple lambdas, then the cross validation is performed. ', type=float)
     parser.add_argument('-w', nargs=1, default=[20.0], help='mean beam diameter', type=float)
     parser.add_argument('-p', nargs=1, default=[1.0], help='beams probe on upper 100 p percent area ', type=float)
     parser.add_argument('-s', nargs=1, help='STD of gaussian noise', type=float)
     parser.add_argument('-save', nargs=1, help='save G and d of search light', type=str)
     parser.add_argument('-load', nargs=1, help='load G and d of search light', type=str)
-    parser.add_argument('-solver', nargs=1, default=["sklearn"], help='SVD solver. sklearn.Ridge, fullsvd', type=str)
+    parser.add_argument('-solver', nargs=1, default=["sklearn"], help='SVD solver. sklearn.Ridge, fullsvd, lasso', type=str)
     args = parser.parse_args()    
 
     solver=args.solver[0]
     img=rpng.get_bwimg(args.f[0])
-    lamb=args.l[0]
+    if len(args.l)==1:
+        lamb=args.l[0]
+    else:
+        lamb=0.0
+        lamblist=args.l
     width=args.w[0]
     N=args.n[0]
     p=args.p[0]
@@ -71,8 +75,16 @@ if __name__ == "__main__":
 
     elif solver == "sklearn":
         start = time.time()
-        clf = lm.Ridge(alpha = lamb)
-        clf.fit(g,d)  
+        if lamb > 0.0:
+            clf = lm.Ridge(alpha = lamb)
+            clf.fit(g,d)  
+        else:
+            print "Cross Validation between ",lamblist
+            clf = lm.RidgeCV(alphas = lamblist)
+            print lamblist
+            clf.fit(g,d)  
+            lamb=clf.alpha_ 
+            print "Result: lambda=",lamb
         mest=clf.coef_
         dpre=np.dot(g,mest)+clf.intercept_ 
         imgest=mest.reshape(Mx,My)

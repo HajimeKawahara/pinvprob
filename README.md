@@ -77,6 +77,12 @@ This example uses the Ridge Regression in scikit-learn linear_model. It's about 
  ./random_light_fast.py -f che.png
 ~~~~
 
+If you want to perform the cross validation (CV), provide the list of lambda. In this case, linear_model.RidgeCV is used to choose the lambda (but usually, smaller value than I expect for the image retrieval).
+
+~~~~
+./random_light_fast.py -f che.png -l 1.e-9 1.e-8 1.e-7 1.e-6 1.e-5 -s 1.0
+~~~~
+
 
 License
 ------------
