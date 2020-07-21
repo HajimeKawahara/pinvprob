@@ -16,7 +16,7 @@ if __name__ == "__main__":
     parser.add_argument('-f', nargs=1, required=True, help='png file')
     args = parser.parse_args()    
     img=get_bwimg(args.f[0])
-    print img.shape    
+    print(img.shape)    
     fig =plt.figure()
     imshow(img,cmap="gray")
     plt.show()

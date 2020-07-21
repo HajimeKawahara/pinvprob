@@ -23,7 +23,7 @@ Note that these codes are inefficient when the image size is large because the c
 Requirements
 ------------------
 
-* python 2.7
+* python 3
 * scipy
 * pylab
 * scikit-learn (only for random_light_fast.py)

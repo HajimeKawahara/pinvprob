@@ -37,29 +37,29 @@ if __name__ == "__main__":
     Mx=img.shape[0]
     My=img.shape[1]
     M=Mx*My
-    print "# of Data = ", N, "# of Model = ", M
+    print("# of Data = ", N, "# of Model = ", M)
 
     if args.load:
     #load d,g,imgext
-        print "Load G and d from ",args.load[0]
+        print("Load G and d from ",args.load[0])
         data=np.load(args.load[0]+".npz")
         d=data["arr_0"]
         g=data["arr_1"]
         imgext=data["arr_2"]
     else:
     #create eclipse curves
-        deltaa=np.array(map(int,np.random.rand(Mx*My)*width)).reshape(Mx,My) #width of beams       
-        ixrand=np.array(map(int,np.random.rand(N)*Mx*p)) # x-position of beams       
-        iyrand=np.array(map(int,np.random.rand(N)*My))   # y-position of beams       
+        deltaa=np.array(list(map(int,np.random.rand(Mx*My)*width))).reshape(Mx,My) #width of beams       
+        ixrand=np.array(list(map(int,np.random.rand(N)*Mx*p))) # x-position of beams       
+        iyrand=np.array(list(map(int,np.random.rand(N)*My)))   # y-position of beams       
         d,g,imgext=rl.create_data_and_designmatrix(N,Mx,My,ixrand,iyrand,deltaa,img)
         
         if args.s:
             sigma=args.s[0]
-            print "noise injection to data: sigma=",sigma
+            print("noise injection to data: sigma=",sigma)
             d=d+np.random.normal(0.0,sigma,N) 
 
     if args.save:
-        print "Save G and d to ",args.save[0]
+        print("Save G and d to ",args.save[0])
         np.savez(args.save[0],d,g,imgext)
 
         
@@ -71,7 +71,7 @@ if __name__ == "__main__":
         mest,dpre,residual,modelnorm,curv_lcurve=tik.tikhonov_regularization(g,d,mprior,U,VT,S,lamb,p=p)
         imgest=mest.reshape(Mx,My)
         elapsed_time = time.time() - start
-        print "solved by np.linalg.svd: time=",elapsed_time
+        print("solved by np.linalg.svd: time=",elapsed_time)
         method="Tikhonov Regularization"
     elif solver == "sklearn":
         start = time.time()
@@ -79,17 +79,17 @@ if __name__ == "__main__":
             clf = lm.Ridge(alpha = lamb)
             clf.fit(g,d)  
         else:
-            print "Cross Validation between ",lamblist
+            print("Cross Validation between ",lamblist)
             clf = lm.RidgeCV(alphas = lamblist)
-            print lamblist
+            print(lamblist)
             clf.fit(g,d)  
             lamb=clf.alpha_ 
-            print "Result: lambda=",lamb
+            print("Result: lambda=",lamb)
         mest=clf.coef_
         dpre=np.dot(g,mest)+clf.intercept_ 
         imgest=mest.reshape(Mx,My)
         elapsed_time = time.time() - start
-        print "solved by scikit_learn.Ridge: time=",elapsed_time
+        print("solved by scikit_learn.Ridge: time=",elapsed_time)
         method="Tikhonov Regularization"
     elif solver == "lasso":
         start = time.time()
@@ -97,17 +97,17 @@ if __name__ == "__main__":
             clf = lm.Lasso(alpha = lamb)
             clf.fit(g,d)  
         else:
-            print "Cross Validation between ",lamblist
+            print("Cross Validation between ",lamblist)
             clf = lm.LassoCV(alphas = lamblist)
-            print lamblist
+            print(lamblist)
             clf.fit(g,d)  
             lamb=clf.alpha_ 
-            print "Result: lambda=",lamb
+            print("Result: lambda=",lamb)
         mest=clf.coef_
         dpre=np.dot(g,mest)+clf.intercept_ 
         imgest=mest.reshape(Mx,My)
         elapsed_time = time.time() - start
-        print "solved by scikit_learn.Lasso: time=",elapsed_time
+        print("solved by scikit_learn.Lasso: time=",elapsed_time)
         method="LASSO"
 
     else:

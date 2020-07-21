@@ -42,8 +42,8 @@ def NGIM_regularization(Dm,Ao,Smprior,U,VT,S,lim):
     #should be np.array
 
     p = np.sum(S>lim)
-    print "NGIM/TSVD: we regard values below ",lim," as zero."
-    print "p = ", p
+    print("NGIM/TSVD: we regard values below ",lim," as zero.")
+    print("p = ", p)
     sumphi=0.0
 
     Ndata=len(Ao)
