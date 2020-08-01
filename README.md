@@ -1,14 +1,14 @@
-pinvprob
+pinvprob3
 =========
 [![Licence](http://img.shields.io/badge/license-GPLv2-blue.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html)
 [![arXiv](http://img.shields.io/badge/arXiv-1106.0136-red.svg?style=flat)](http://arxiv.org/abs/1106.0136)
 [![arXiv](http://img.shields.io/badge/arXiv-1204.3504-green.svg?style=flat)](http://arxiv.org/abs/1204.3504)
+[![arXiv](http://img.shields.io/badge/arXiv-2007.13096-blue.svg?style=flat)](http://arxiv.org/abs/2007.13096)
 
-
-Python codes for the linear inverse problem including the generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion
+Python 3 codes for the linear inverse problem including the generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion
 
 Originally I developed Fortran90 codes of the inverse problem for two papers, 
-[Kawahara & Fujii (2011)](http://arxiv.org/abs/1106.0136) and [Fujii & Kawahara (2012)](http://arxiv.org/abs/1204.3504). I converted them to Python codes for internal seminars in the University of Tokyo.
+[Kawahara & Fujii (2011)](http://arxiv.org/abs/1106.0136), [Fujii & Kawahara (2012)](http://arxiv.org/abs/1204.3504), and [Kawahara & Masuda (2020)](http://arxiv.org/abs/2007.13096). I converted them to Python codes for internal seminars in the University of Tokyo.
 
 The algorithm of the L-curve criterion is based on the brilliant book:
 
