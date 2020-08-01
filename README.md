@@ -4,6 +4,8 @@ pinvprob
 [![arXiv](http://img.shields.io/badge/arXiv-1106.0136-red.svg?style=flat)](http://arxiv.org/abs/1106.0136)
 [![arXiv](http://img.shields.io/badge/arXiv-1204.3504-green.svg?style=flat)](http://arxiv.org/abs/1204.3504)
 
+**Important Note: Python 3 version is now available at [pinvprob3](https://github.com/HajimeKawahara/pinvprob3)**
+
 Python codes for the linear inverse problem including the generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion
 
 Originally I developed Fortran90 codes of the inverse problem for two papers, 
