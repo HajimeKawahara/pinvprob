@@ -5,6 +5,8 @@ pinvprob3
 [![arXiv](http://img.shields.io/badge/arXiv-1204.3504-green.svg?style=flat)](http://arxiv.org/abs/1204.3504)
 [![arXiv](http://img.shields.io/badge/arXiv-2007.13096-blue.svg?style=flat)](http://arxiv.org/abs/2007.13096)
 
+📙 [Textbook written in Japanese](https://github.com/HajimeKawahara/pinvprob/blob/master/invprob.pdf)
+
 Python 3 codes for the linear inverse problem including the generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion
 
 Originally I developed Fortran90 codes of the inverse problem for two papers, 
