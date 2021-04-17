@@ -5,19 +5,20 @@ pinvprob3
 [![arXiv](http://img.shields.io/badge/arXiv-1204.3504-green.svg?style=flat)](http://arxiv.org/abs/1204.3504)
 [![arXiv](http://img.shields.io/badge/arXiv-2007.13096-blue.svg?style=flat)](http://arxiv.org/abs/2007.13096)
 
-📙 [Textbook written in Japanese](https://github.com/HajimeKawahara/pinvprob/blob/master/invprob.pdf)
+📝 [a short paper written in Japanese](https://github.com/HajimeKawahara/pinvprob/blob/master/invprob.pdf)
 
-Python 3 codes for the linear inverse problem including the generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion
-
-Originally I developed Fortran90 codes of the inverse problem for two papers, 
-[Kawahara & Fujii (2011)](http://arxiv.org/abs/1106.0136), [Fujii & Kawahara (2012)](http://arxiv.org/abs/1204.3504), and [Kawahara & Masuda (2020)](http://arxiv.org/abs/2007.13096). I converted them to Python codes for internal seminars in the University of Tokyo.
+🐧 pinvprob3 is a Python 3 package for the linear inverse problem including generalized inverse matrix, truncated SVD, Tikhonov regularization, L-curve criterion, Bayesian linear inverse problem. Originally, I wrote Fortran code for the following two papers,
+[Kawahara & Fujii (2011)](http://arxiv.org/abs/1106.0136), [Fujii & Kawahara (2012)](http://arxiv.org/abs/1204.3504),
+, which I converted for python. 
+I then added the code for the Bayesian version for the following paper:
+[Kawahara & Masuda (2020)](http://arxiv.org/abs/2007.13096). 
 
 The algorithm of the L-curve criterion is based on the brilliant book:
 
-* Hansen, P. C. 2010, Discrete Inverse Problems: Insight and Algorithms (the Society for Industrial and Applied Mathema
+📗 Hansen, P. C. 2010, Discrete Inverse Problems: Insight and Algorithms (the Society for Industrial and Applied Mathema
 tics).
 
-I made "random_light.py" as a sample code. This sample code retrieves a small png image from a collection of summation of random rectangle parts of the image. If you use Japanese, see invprov.pdf, otherwise, see the figure below. You will understand the problem of the sample. 
+"random_light.py" is a sample code. This code retrieves a small png image from a collection of summation of random rectangle parts of the image. If you use Japanese, see invprov.pdf, otherwise, see the figure below. I hope you will understand the problem. 
 
 <img src="./figure/figure1.png" Titie="explanation" Width=500px>
 
