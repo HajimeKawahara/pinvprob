@@ -4,8 +4,8 @@ import sys
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
-import readpng as rpng
-import tikhonov as tik
+from pinvprob import readpng as rpng
+from pinvprob import tikhonov as tik
 import scipy.sparse.linalg
 import time
 
@@ -140,6 +140,7 @@ if __name__ == "__main__":
 
     solver = args.solver[0]
     img = rpng.get_bwimg(args.f[0])
+    Mx, My = np.shape(img)
     lamb = args.l[0]
     width = args.w[0]
     N = args.n[0]

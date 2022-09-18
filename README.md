@@ -32,6 +32,13 @@ Requirements
 * pylab
 * scikit-learn (only for random_light_fast.py)
 
+Install
+--------------
+
+```
+python setup.py install
+```
+
 Tutorial
 -------------------------
 
