@@ -1,0 +1,6 @@
+__version__ = '1.0.0'
+__uri__ = 'http://secondearths.sakura.ne.jp/pinvprob/'
+__author__ = 'Hajime Kawahara'
+__email__ = 'divrot@gmail.com'
+__license__ = 'Gnu GPL v2'
+__description__ = 'learning inverse problem'
